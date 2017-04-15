@@ -101,6 +101,14 @@ exports.seed = (knex) => {
         {
           ticket_id: 7,
           attendee_id: 1
+        },
+        {
+          ticket_id: 7,
+          attendee_id: 1
+        },
+        {
+          ticket_id: 7,
+          attendee_id: 1
         }
       ])
     })
