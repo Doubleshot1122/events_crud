@@ -9,9 +9,14 @@ block content
       .row
       .col-md-6
         each val in eventResults
-          //- var count = #{val.count}
           p #{val.title} - #{val.count} / #{val.capacity}
           p #{val.description}
-
+          if (val.full)
+             strong Event is FULL!!
+          else
+            a(href='/') Register Here
           br
+          br
+          br
+
     .row

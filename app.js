@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-// var hbs = require('hbs');
 var pug = require('pug');
 
 var index = require('./routes/index');
@@ -14,11 +13,6 @@ var attendees = require('./routes/attendees');
 var venues = require('./routes/venues');
 
 var app = express();
-
-// view engine setup
-// hbs.registerPartials(path.join(__dirname,'views','shared'));
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
 
 //view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -20,7 +20,6 @@ router.get('/', function(req, res, next) {
   })
   .then(adjResults => {
     var eventResults = adjResults.rows;
-    console.log(eventResults);
     res.render('currEvents', {eventResults});
   })
 });
