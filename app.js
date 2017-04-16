@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var hbs = require('hbs');
+// var hbs = require('hbs');
+var pug = require('pug');
 
 var index = require('./routes/index');
 var events = require('./routes/events');
@@ -15,9 +16,13 @@ var venues = require('./routes/venues');
 var app = express();
 
 // view engine setup
-hbs.registerPartials(path.join(__dirname,'views','shared'));
+// hbs.registerPartials(path.join(__dirname,'views','shared'));
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'hbs');
+
+//view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

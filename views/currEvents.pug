@@ -1,0 +1,17 @@
+extend layout.pug
+
+
+
+block content
+  .container
+    h1 Current Events
+    .row
+      .row
+      .col-md-6
+        each val in eventResults
+          //- var count = #{val.count}
+          p #{val.title} - #{val.count} / #{val.capacity}
+          p #{val.description}
+
+          br
+    .row
