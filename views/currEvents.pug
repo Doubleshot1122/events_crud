@@ -1,7 +1,5 @@
 extend layout.pug
 
-
-
 block content
   .container
     h1 Current Events
@@ -9,12 +7,14 @@ block content
       .row
       .col-md-6
         each val in eventResults
+          hr
+          - var link = val.id
           p #{val.title} - #{val.count} / #{val.capacity}
           p #{val.description}
           if (val.full)
              strong Event is FULL!!
           else
-            a(href='/') Register Here
+            a(href="/events/"+link+"/register") Register Here
           br
           br
           br

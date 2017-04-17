@@ -1,0 +1,18 @@
+extend layout.pug
+
+block content
+  .container
+    h1 #{attendeeEvents[0].fName} #{attendeeEvents[0].lName}
+    .row
+      .row
+      .col-md-6
+        each val in attendeeEvents
+          hr
+          - var link = val.id
+          p #{val.title}
+          p #{val.start}
+          p #{val.description}
+          br
+          br
+
+    .row

@@ -1,0 +1,49 @@
+extend layout.pug
+
+block content
+  h1 #{singleEvent[0].title}
+  p #{singleEvent[0].description}
+
+  hr
+  h4 Event Location Information:
+  p #{singleEvent[0].venueName} === #{singleEvent[0].line_1} #{singleEvent[0].city} #{singleEvent[0].state} #{singleEvent[0].zip}
+  hr
+  br
+
+  form(
+    action='#'
+    method='post'
+  )
+    .row
+      .col-md-6
+        .form-group
+          label(for='prefName') Preferred Name -
+          input.form-control(type='text' id='prefName' name='prefName')
+    .row
+      .col-md-6
+        .form-group
+          label(for='lastName') Last Name -
+          input.form-control(type='text' id='lastName' name='lastName')
+    .row
+      .col-md-6
+        .form-group
+          label(for='birthday') Birthday -
+          input.form-control(type='date' id='birthday' name='birthday')
+    .row
+      .col-md-6
+        .form-group
+          label(for='email') Email -
+          input.form-control(type='email' id='email' name='email')
+    .row
+      .col-md-6
+        .form-group
+          label(for='ticketType') Ticket Type -
+          select.form-control(id='ticketType' name='ticketType')
+            each val in singleEvent
+              option #{val.ticketName} - #{val.ticketPrice}
+    .row
+      .col-md-6
+        .form-group
+          button.btn-default(type=submit) Register
+  if error
+    #{error}
